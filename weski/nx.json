@@ -45,5 +45,13 @@
       }
     }
   },
-  "defaultProject": "web-app"
+  "defaultProject": "web-app",
+  "projects": {
+    "web-app": {
+      "tags": []
+    },
+    "web-app-e2e": {
+      "tags": []
+    }
+  }
 }

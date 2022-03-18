@@ -34,5 +34,8 @@ nx g c offers  --export=false --routing=true --style=@emotion/styled && \
 nx g c offers-list --directory=offers --export=false --routing=true --style=@emotion/styled && \
 nx g c offer-details  --directory=offers  --export=false --routing=true --style=@emotion/styled && \
 nx g c home  --export=false --routing=true --style=@emotion/styled && \
+nx g @nrwl/nest:resource offers --project api
+nx g @nestjs/schematics:resource offers --project api --no-interactive
+nx g @nestjs/schematics:resource resorts --project api --no-interactive
 mkdir server && touch server/db.json && \
 npx concurrently "npm start" "npm start api"
