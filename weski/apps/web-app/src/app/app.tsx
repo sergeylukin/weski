@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import NxWelcome from './nx-welcome';
 
@@ -8,6 +9,13 @@ const StyledApp = styled.div`
 `;
 
 export function App() {
+  const [offers, setOffers] = useState([]);
+  useEffect(() => {
+    fetch('/api/offers')
+      .then((_) => _.json())
+      .then(setOffers);
+  }, []);
+  console.log(offers);
   return (
     <StyledApp>
       <NxWelcome title="web-app" />
