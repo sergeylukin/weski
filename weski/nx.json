@@ -47,6 +47,9 @@
   },
   "defaultProject": "web-app",
   "projects": {
+    "api": {
+      "tags": []
+    },
     "web-app": {
       "tags": []
     },
