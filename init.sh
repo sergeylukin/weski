@@ -5,12 +5,15 @@ npx create-nx-workspace@latest weski \
   --npmScope=weski \
   --nx-cloud=false \
   --linter=eslint \
-  --style=scss && \
+  --style=@emotion/styled && \
 cd weski/ && \
+npm install -D @nrwl/nest
 npm i axios --force && \
 npm i -D json-server --force && \
 npm i -D concurrently --force && \
 npm i @material-ui/core --force && \
+nx g remove api
+nx g @nrwl/nest:app api
 nx g lib core-data --component=false && \
 nx g lib core-state --component=false && \
 nx g lib material --component=false && \

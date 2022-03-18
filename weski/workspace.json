@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "projects": {
+    "api-interfaces": "libs/api-interfaces",
+    "core-data": "libs/core-data",
+    "core-state": "libs/core-state",
+    "material": "libs/material",
+    "web-app": "apps/web-app",
+    "web-app-e2e": "apps/web-app-e2e"
+  }
+}
