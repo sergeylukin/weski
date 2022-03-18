@@ -30,9 +30,9 @@ nx g slice offers \
 nx g c resorts  --export=false --routing=true --style=@emotion/styled && \
 nx g c resorts-list --directory=resorts --export=false --routing=true --style=@emotion/styled && \
 nx g c resort-details  --directory=resorts  --export=false --routing=true --style=@emotion/styled && \
-nx g c offers  --export=false --routing=true --style=@emotion/styled && \
-nx g c offers-list --directory=offers --export=false --routing=true --style=@emotion/styled && \
-nx g c offer-details  --directory=offers  --export=false --routing=true --style=@emotion/styled && \
+npx nx g @nrwl/react:component offers --routing --project web-app --style @emotion/styled --export && \
+npx nx g @nrwl/react:component offers-list --routing --project web-app --style @emotion/styled --export && \
+npx nx g @nrwl/react:component offer-details --routing --project web-app --style @emotion/styled --export && \
 nx g c home  --export=false --routing=true --style=@emotion/styled && \
 nx g @nrwl/nest:resource offers --project api
 nx g @nestjs/schematics:resource resorts --source-root apps/api/src --type rest --crud true --no-interactive && \
