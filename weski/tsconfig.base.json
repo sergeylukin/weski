@@ -15,10 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@weski/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@weski/core-data": ["libs/core-data/src/index.ts"],
-      "@weski/core-state": ["libs/core-state/src/index.ts"],
-      "@weski/material": ["libs/material/src/index.ts"]
+      "@weski/api-interfaces": ["libs/api-interfaces/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

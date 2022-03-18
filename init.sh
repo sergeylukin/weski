@@ -1,19 +1,19 @@
 #!/usr/bin/env sh
 npx create-nx-workspace@latest weski \
-  --appName=web-app \
-  --preset=react-express \
+  --appName=ang-app \
+  --preset=angular-nest \
   --npmScope=weski \
   --nx-cloud=false \
-  --linter=eslint \
-  --style=@emotion/styled && \
+  --linter=tslint \
+  --style=scss && \
 cd weski/ && \
-npm install -D @nrwl/nest
 npm i axios --force && \
 npm i -D json-server --force && \
+npm install -D @nrwl/react && \
 npm i -D concurrently --force && \
 npm i @material-ui/core --force && \
-nx g remove api
-nx g @nrwl/nest:app api
+# nx g remove ang-app-e2e ang-app && \
+nx g @nrwl/react:app web-app --style=emotion --routing && \
 nx g lib core-data --component=false && \
 nx g lib core-state --component=false && \
 nx g lib material --component=false && \
@@ -35,8 +35,7 @@ nx g c offers-list --directory=offers --export=false --routing=true --style=@emo
 nx g c offer-details  --directory=offers  --export=false --routing=true --style=@emotion/styled && \
 nx g c home  --export=false --routing=true --style=@emotion/styled && \
 nx g @nrwl/nest:resource offers --project api
- nx g @nestjs/schematics:resource resorts --source-root apps/api/src --type rest
- nx g @nestjs/schematics:resource offers --source-root apps/api/src --type rest
- --crud true --no-interactive
+nx g @nestjs/schematics:resource resorts --source-root apps/api/src --type rest --crud true --no-interactive && \
+nx g @nestjs/schematics:resource offers --source-root apps/api/src --type rest --crud true --no-interactive && \
 mkdir server && touch server/db.json && \
 npx concurrently "npm start" "npm start api"

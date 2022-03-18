@@ -4,10 +4,10 @@
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@angular-devkit/build-angular:tslint",
       "options": {
-        "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+        "tsConfig": ["libs/api-interfaces/tsconfig.lib.json"],
+        "exclude": ["**/node_modules/**", "!libs/api-interfaces/**/*"]
       }
     }
   },
